@@ -1,12 +1,9 @@
 import styles from './NoteItem.module.css'
 
-const NoteItem = ({ note, index, deleteNote }) => {
+const NoteItem = ({ note }) => {
   return (
     <div className={styles.item}>
       <p className={styles.itemText}>{note}</p>
-      <button className={styles.itemButton} onClick={() => deleteNote(index)}>
-        <span/>
-      </button>
     </div>
   );
 }

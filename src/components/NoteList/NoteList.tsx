@@ -20,7 +20,7 @@ class NoteList extends Component {
     render() {
         return (
             <div className={styles.notesContainer}>
-                <h2>{this.title}</h2>
+                <h2 className={styles.title}>{this.title}</h2>
                 <ul className={styles.notesList}>
                     {React.Children.map(this.props.children, (child, index) => (<li key={index}>{child}</li>))}
                 </ul>
