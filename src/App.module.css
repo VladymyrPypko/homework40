@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  gap: 50px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input,
+.btnSubmit {
+  width: 150px;
+  padding: 8px;
+  background-color: transparent;
+  border: 2px solid #eeeeea;
+  border-radius: 8px;
+  color: #eeeeea;
+  transition: .5s;
+}
+
+.btnSubmit:hover {
+  cursor: pointer;
+  background-color: #eeeeea;
+  color: #313a31;
+}
+
+.userLoading, 
+.userError, 
+.userName {
+  font-size: 1.5rem;
+  order: -1;
+}
+
+.userError {
+  color: red;
+}

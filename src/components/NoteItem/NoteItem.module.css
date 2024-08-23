@@ -1,0 +1,61 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 10%);
+    border-radius: 8px;
+}
+
+.itemText {
+    display: block;
+    width: 35ch;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.itemButton {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.itemButton:hover span {
+    animation: spanLeft .3s ease-out;
+}
+
+.itemButton:hover span::before {
+    animation: spanRight .3s ease-out;
+}
+
+span,
+span::before {
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    background-color: red;
+}
+
+span {
+    transform: rotateZ(45deg);
+}
+
+span::before {
+    content: '';
+    transform: rotateZ(90deg);
+}
+
+@keyframes spanLeft {
+    to {
+        transform: rotateZ(135deg);
+    }
+}
+
+@keyframes spanRight {
+    to {
+        transform: rotateZ(-90deg);
+    }
+}
