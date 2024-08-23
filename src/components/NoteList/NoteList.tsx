@@ -1,10 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 import styles from './NoteList.module.css';
 
-class NoteList extends Component {
+interface NoteListProps {
+  title: string
+  children: ReactNode
+}
+
+class NoteList extends Component<NoteListProps>{
     #title = '';
 
-    constructor(props) {
+    constructor(props: NoteListProps) {
         super(props);
         this.title = props.title;
     }
@@ -13,7 +18,7 @@ class NoteList extends Component {
         return `***${this.#title}***`;
     }
 
-    set title(title) {
+    set title(title: string) {
         this.#title = title?.replace(/[0-9\s]/g, '');
     }
 

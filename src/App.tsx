@@ -6,21 +6,23 @@ import { addNote, resetNotes, useAppDispatch, useAppSelector } from './store';
 
 
 const App = () => {
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
   const dispatch = useAppDispatch();
   const notes = useAppSelector(state => state.notes.notes);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
 
-    const noteContent = inputRef.current.value.trim();
-    if(noteContent) {
-      const newNote = {
-        id: Date.now(),
-        content: noteContent,
-      };
-      dispatch(addNote(newNote));
-      inputRef.current.value = '';
+    if(inputRef.current) {
+      const noteContent = inputRef.current.value.trim();
+      if(noteContent) {
+        const newNote = {
+          id: Date.now(),
+          content: noteContent,
+        };
+        dispatch(addNote(newNote));
+        inputRef.current.value = '';
+      }
     }
 
   };
