@@ -1,10 +1,6 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit"
 import { useDispatch, useSelector } from "react-redux"
-
-interface Note {
-  id: number
-  content: string
-}
+import { Note } from "./interfaces/Note.interface";
 
 const initialState = {
   notes: [] as Note[]
