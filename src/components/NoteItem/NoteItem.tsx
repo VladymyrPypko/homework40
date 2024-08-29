@@ -1,14 +1,16 @@
 import { FC } from 'react';
 import styles from './NoteItem.module.css'
+import { Note } from '../../interfaces/Note.interface';
 
 interface NoteItemProps {
-  note: string
+  note: Note;
 }
 
 const NoteItem: FC<NoteItemProps> = ({ note }) => {
   return (
     <div className={styles.item}>
-      <p>{note}</p>
+      <h3>{note.title}</h3>
+      <p>{note.text}</p>
     </div>
   );
 }
